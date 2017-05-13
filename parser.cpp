@@ -27,7 +27,7 @@ void encode_instr(ifstream &assembly, ofstream &machine_code)
         getline(assembly, instruction);
         trim_str(instruction);
 
-        // when coming across a lebel
+        // when coming across a label
         if(instruction.back() == ':')
         {
             string symbol(instruction.substr(0, instruction.length()-1));
@@ -56,7 +56,7 @@ void encode_instr(ifstream &assembly, ofstream &machine_code)
         }
         // I-type instruction
         else if(op=="addi" || op=="beq" || op=="li"  || op=="ori" || op=="bnez" ||
-                op=="lw"   || op=="sw"  || op=="blt" || op=="ble" || op=="li")
+                op=="lw"   || op=="sw"  || op=="blt" || op=="ble")
         {
             encode_i(instr_ss, op, result, pos, pc);
         }

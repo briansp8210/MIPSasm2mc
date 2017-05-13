@@ -17,6 +17,8 @@ void lower_str(string &str)
 string fetch_reg(string &reg)
 {
     trim_str(reg);
+    lower_str(reg);
+
     if(reg!="00000" && reg[0]!='$')
         error_msg("Register encoding error!");
 
@@ -76,7 +78,6 @@ void trim_str(string &str)
     for(tail=str.length()-1; tail>=0 && (str[tail]==' '||str[tail]=='\t'); tail--);
 
     str = str.substr(head, tail-head+1);
-    return;
 }
 
 // check the radix of number
