@@ -51,9 +51,39 @@ L1:
 
 ## Supported instructions
 
-* **R type**
-`sll`, `sllv`, `jr`, `mul`, `add`, `sub`, `and`, `or`, `slt`, `sltu`
-* **I type**
-`beq`, `bnez`, `blt`, `ble`, `addi`, `ori`, `li`, `lw`, `sw`
-* **J type**
-`j`, `jal`
+### **R type**
+
+|mnemonic|funct field|
+|:------:|:---------:|
+|`sll`   |          0|
+|`sllv`  |          4|
+|`jr`    |          8|
+|`mul`   |         24|
+|`add`   |         32|
+|`sub`   |         34|
+|`and`   |         36|
+|`or`    |         37|
+|`slt`   |         42|
+|`sltu`  |         43|
+
+### **I type**
+
+|mnemonic|op field|
+|:------:|:------:|
+|`beq`   |       4|
+|`bnez`  |       5|
+|`blt`   |       6|
+|`ble`   |       7|
+|`addi`  |       8|
+|`ori`   |      13|
+|`li`    |      15|
+|`lw`    |      35|
+|`sw`    |      43|
+
+### **J type**
+
+|mnemonic|op field|
+|:------:|:------:|
+|`j`     |       2|
+|`jal`   |       3|
+
